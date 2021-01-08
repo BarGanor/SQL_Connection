@@ -16,16 +16,18 @@ class Sql_Server_DataBase:
                               'Trusted_Connection=yes;')
 
         return myDB
-
+    
+    # Function returnes 2dim array (pandas)
     def query_To_Pandas(self, query):
         df = pd.read_sql_query(query, self.myDB)
         return df
 
+    # Function sends query 
     def send_Query(self, query):
         cursor = self.myDB.cursor()
         cursor.execute(query)
 
-
+# DB_For_Project = Sql_Server_DataBase(enter_server_name, "enter_db_name")
 DB_For_Project = Sql_Server_DataBase("XPS\SQLEXPRESS", "Project_For_DB")
 
 
