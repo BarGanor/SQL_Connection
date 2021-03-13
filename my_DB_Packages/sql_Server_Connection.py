@@ -17,7 +17,7 @@ class Sql_Server_DataBase:
 
         return myDB
     
-    # Function returnes 2dim array (pandas)
+    # Function returnes dataframe (pandas)
     def query_To_Pandas(self, query):
         df = pd.read_sql_query(query, self.myDB)
         return df
@@ -27,8 +27,8 @@ class Sql_Server_DataBase:
         cursor = self.myDB.cursor()
         cursor.execute(query)
 
-# DB_For_Project = Sql_Server_DataBase(enter_server_name, "enter_db_name")
-DB_For_Project = Sql_Server_DataBase("XPS\SQLEXPRESS", "Project_For_DB")
+# Create Connection Object
+# Example: DB_For_Project = Sql_Server_DataBase("XPS\SQLEXPRESS", "Project_For_DB")
 
 
 
